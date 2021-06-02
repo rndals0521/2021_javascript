@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#btn{
+		width: 150px;
+		height: 50px;
+		margin: auto;
+	}
+	
+	#light1{
+		width: 200px;
+		margin: auto;
+	}
+	#light2{
+		width: 200px;
+		margin: auto;
+	}
+	#sea{
+		width: 200px;
+		margin: auto;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	
+	function lightOn() {
+		document.getElementById("img1").src = "images/lighton.gif";
+	}
+	
+	function lightOff(){
+		document.getElementById("img1").src = "images/lightoff.gif";
+	}
+	function lightOn2() {
+		document.getElementById("img2").src = "images/lighton.gif";
+	}
+	
+	function lightOff2(){
+		document.getElementById("img2").src = "images/lightoff.gif";
+	}
+	function viewOn2() {
+		document.getElementById("img3").style.visibility = "visible";
+	}
+	
+	function viewOff2(){
+		document.getElementById("img3").style.visibility = "hidden";
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="btn">
+		<button onclick="lightOn()">ON</button>
+		<button onclick="lightOff()">OFF</button>
+	</div>
+
+	<div id="light1">
+		<img id="img1" alt="" src="images/lightoff.gif">
+		<h3>마우스를 그림에 올리기</h3>
+	</div>
+	<div id="light2">
+		<img id="img2" onmouseover="lightOn2()" onmouseout="lightOff2()" alt="" src="images/lightoff.gif">
+		<h3>마우스를 해당 글자 위에 올리면 그림이 나옴</h3>
+	</div>
+	<div id="sea">
+		<img id="img3" alt="" src="images/sea.jpg" style="width: 200px; visibility: hidden;">
+		<h3 onmouseover="viewOn2()" onmouseout="viewOff2()">글자에 마우스를 올려주세요</h3>
+	</div>
+
+</body>
+</html>

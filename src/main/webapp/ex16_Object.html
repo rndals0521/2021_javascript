@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : Object</title>
+<script type="text/javascript">
+// 객체 만드는 방법 2
+var person1 = {
+		name : "임꺽정",
+		age : 47,
+		play : function() {
+			return "야구를 하자";
+		},
+		sound : function() {
+			// 객체 내 함수에서 자기속성을 사용하기 위해서는 this가 필요하다.(생략불가)
+			// 오류 : document.write("<h3>" + name + "," + age + "</h3>");
+			document.write("<li>" + this.name + "," + this.age + "</li>");
+		}
+};
+
+document.write("<h2> 객체 상태값 호출 </h2>");
+document.write("<h3>");
+document.write("<li>"+person1["name"]+"</li>");
+document.write("<li>"+person1.age+"</li>");
+document.write("<li>"+person1.play()+"</li>");
+person1.sound();
+document.write("</h3>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

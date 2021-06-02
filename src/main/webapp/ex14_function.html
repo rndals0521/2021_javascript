@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콜백함수</title>
+<script type="text/javascript">
+	//콜백함수 : 파라미터로 함수를 전달하는 함수
+	//         파라미터로 함수를 전달받아, 함수의내부에서 실행하는 함수
+	
+	//         어떤 이벤트가 발생한 후, 수행될 함수를 의미한다.
+	//         함수 내부의 처리 결과값을 함수 외부로 전달할 수 있다.
+	
+	function send_go1() {
+		alert("경고메시지");
+	}
+	
+	function send_go2() {
+		// 지연시간이 지나면 콜백함수를 실행하자.
+		//setTimeout(콜백함수, 지연시간);
+		setTimeout(myfunc, 3000);
+	}
+	
+	function myfunc(){
+		alert("HI");
+	}
+	
+	
+	function send_go3() {
+		setTimeout(function() {
+			alert("HEllO")
+		}, 2000);
+	}
+	
+	function send_go4() {
+		// 람다식, 축약형		
+		setTimeout(() => {
+			alert("Hello javaScript")
+		}, 1000);
+	}
+	
+	function send_go5() {
+		var cnt=0;
+		//지연시간 경과 후 반복실행
+		//콜백함수를 1초마다 반복실행
+		setInterval(() =>{
+			cnt++;
+			if(cnt<11){
+				document.write(cnt+"번 HI~~ <br>");
+			}else{
+				// setInterval을 가지고 있는 함수의 반복실행을 중지
+				clearInterval(send_go5);
+			}
+		},1000);
+	}
+</script>
+</head>
+<body>
+	<!-- html 태그 속성 중 onXXX는 자바스크립트 함수 호출이다. -->
+	<button onClick="send_go1()">버튼1</button>
+	<button onClick="send_go2()">버튼2</button>
+	<button onClick="send_go3()">버튼3</button>
+	<button onClick="send_go4()">버튼4</button>
+	<button onClick="send_go5()">버튼5</button>
+</body>
+</html>
